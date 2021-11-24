@@ -6,18 +6,18 @@ public class PasswordCheck {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
-        boolean passwortValid = false;
+        boolean passwordValid = false;
         do {
-          System.out.print("Geben Sie ein Passwort ein:  ");
-          String passwort = input.nextLine();
+          System.out.print("Geben Sie ein Password ein:  ");
+          String password = input.nextLine();
           
-          if(passwort.length() < 8) {
+          if(password.length() < 8) {
             continue;
           }
           boolean lettersAndDigits = true;
           int digitCount = 0;
-          for(int index = 0; index < passwort.length(); index++){
-            char symbol = passwort.charAt(index);
+          for(int index = 0; index < password.length(); index++){
+            char symbol = password.charAt(index);
             if (!Character.isLetterOrDigit(symbol)) {
               lettersAndDigits = false;
               break;
@@ -29,11 +29,11 @@ public class PasswordCheck {
           }
 
           if(lettersAndDigits && digitCount >= 2) {
-            passwortValid = true;
+            passwordValid = true;
           }
 
-        } while (!passwortValid);
+        } while (!passwordValid);
 
-        System.out.println("Passwort valid!");
+        System.out.println("Password valid!");
     }
 }
